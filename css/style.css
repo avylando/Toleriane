@@ -424,9 +424,33 @@ body { font-family: Gilroy; }
 	cursor: pointer;
 }
 
+.sld4 .s1 .list .item-3 .plus {
+	filter: grayscale(0.5);
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
 .sld4 .s2,
 .sld4 .s3 {
 	display: none;
+}
+
+.sld4 .s2 #graphs4A .sub {
+	position: absolute;
+	bottom: 1px;
+	font-size: 12px;
+	font-weight: 700;
+	color: #ffffff;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.sld4 .s2 #graphs4A .left4 .sub {
+	left: 164px;
+}
+
+.sld4 .s2 #graphs4A .right4 .sub {
+	left: 547px;
 }
 
 .sld4 .s2 .ellipse {
@@ -571,19 +595,66 @@ body { font-family: Gilroy; }
 }
 
 .sld5 .adv {
-	box-sizing: border-box;
 	position: absolute;
 	top: 200px;
 	left: 342px;
-	width: 641px;
-	height: 414px;
-	padding-left: 130px;
-	padding-top: 21px;
-	background-image: url('../images/adv-list-bg.png');
 }
 
 .sld5 .adv .item {
-	margin-bottom: 46px;
+	box-sizing: border-box;
+	position: relative;
+	width: 641px;
+	height: 101px;
+	padding-left: 130px;
+	padding-top: 21px;
+	margin-bottom: 3px;
+	background-image: url('../images/list-plate.png');
+	transform: translateX(-300px);
+	opacity: 0;
+	transition: 1.3s;
+}
+
+.sld5 .adv .item::before {
+	content: '';
+	position: absolute;
+	background-repeat: no-repeat;
+}
+
+.sld5 .adv .item-1::before {
+	top: 25px;
+    left: 44px;
+	width: 42px;
+	height: 48px;
+	background-image: url('../images/adv-head.png');
+}
+
+.sld5 .adv .item-2::before {
+	top: 27px;
+	left: 44px;
+	width: 48px;
+	height: 48px;
+	background-image: url('../images/adv-smile.png');
+}
+
+.sld5 .adv .item-3::before {
+	top: 23px;
+    left: 38px;
+	width: 60px;
+	height: 48px;
+	background-image: url('../images/adv-skin.png');
+}
+
+.sld5 .adv .item-4::before {
+	top: 19px;
+    left: 40px;
+	width: 57px;
+	height: 57px;
+	background-image: url('../images/adv-face.png');
+}
+
+.sld5 .adv .item-anim {
+	transform: translateX(0);
+	opacity: 1;
 }
 
 .sld5 .adv .item .text {
@@ -966,16 +1037,57 @@ body { font-family: Gilroy; }
 	margin-bottom:7px
 }
 
+.sld6 .ft1 .bottle1,
+.sld6 .ft1 .bottle2,
+.sld6 .ft1 .bottle3 {
+	position: absolute;
+	background-repeat: no-repeat;
+	z-index: 1;
+}
+
+.sld6 .ft1 .bottle1 {
+	top: 80px;
+	left: 157px;
+	width: 83px;
+	height: 334px;
+	background-image: url('../images/bottle1-f.png');
+}
+
+.sld6 .ft1 .bottle2 {
+	top: 107px;
+	left: 476px;
+	width: 81px;
+	height: 244px;
+	background-image: url('../images/bottle2-f.png');
+}
+
+.sld6 .ft1 .bottle3 {
+	top: 81px;
+	left: 793px;
+	width: 82px;
+	height: 334px;
+	background-image: url('../images/bottle3-f.png');
+}
+
 .sld6 .ft1 .q1,
 .sld6 .ft1 .q2,
 .sld6 .ft1 .q3{
+	box-sizing: border-box;
 	color:#565656;
 	font-family:Gilroy;
 	font-size:24px;
 	font-weight:300;
 	line-height:26px;
 	position:absolute;
-	padding-left:48px
+	padding-left:10px;
+	width: 83px;
+	height: 36px;
+	background-image: url('../images/plate.png');
+	text-align: center;
+	padding-top: 5px;
+	transform: translateX(-50px);
+	opacity: 0;
+	transition: 1.5s;
 }
 
 .sld6 .ft1 .q1:after,
@@ -994,15 +1106,19 @@ body { font-family: Gilroy; }
 }
 .sld6 .ft1 .q1{
 	top:300px;
-	left:197px;
+	left:222px;
 }
 .sld6 .ft1 .q2{
 	top:300px;
-	left:516px;
+	left:540px;
 }
 .sld6 .ft1 .q3{
 	top:300px;
-	left:827px;
+	left:858px;
+}
+.sld6 .ft1 .q-anim {
+	transform: translateX(0);
+	opacity: 1;
 }
 .sld6 .ft1 .open1{
 	background-image:url("../images/icons2.png");
@@ -1385,7 +1501,7 @@ body { font-family: Gilroy; }
 	background-repeat: no-repeat;
 }
 
-.sld7 .box::before {
+/* .sld7 .box::before {
 	content: '';
 	width: 121px;
 	height: 121px;
@@ -1394,7 +1510,28 @@ body { font-family: Gilroy; }
     left: -72px;
 	background-image: url('../images/label.png');
 	background-repeat: no-repeat;
+} */
+
+.sld7 .box .sticker {
+	position: absolute;
+	top: -88px;
+    left: -72px;
+	z-index: 5;
+	width: 121px;
+	height: 121px;
+    border-radius: 50%;
+	background-image: url('../images/label.png');
+	background-repeat: no-repeat;
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: rotate(-45deg) scale(3);
+    transition: all .3s ease-in;
 }
+
+.sld7 .box .sticker-anim {
+    opacity: 1;
+    transform: rotate(-0deg) scale(1);
+ }
 
 .sld7 .in-set {
 	box-sizing: border-box;
